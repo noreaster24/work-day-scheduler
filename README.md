@@ -19,3 +19,7 @@
         * THEN the text for that event is saved in local storage
     * WHEN I refresh the page
         * THEN the saved events persist
+
+### Program Notes
+* Click in the text area to add an item to a specific time
+* Be sure to click the save button before closing the page.  Failing to click the save button will lose any information.
