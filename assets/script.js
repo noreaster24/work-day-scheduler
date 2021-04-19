@@ -1,7 +1,11 @@
 
-var rightNow = moment();
+var dateToday = moment().format("[Today is] dddd, MMMM Do YYYY");
 var tomorrow = moment().add(1, "day").format("dddd, MM-D-YYYY");
+console.log(dateToday);
 console.log(tomorrow);
+
+// post current date in header
+$("#date").append(dateToday);
 
 // save information to local storage when save button pressed
 $("saveBtn").click(function () {
@@ -28,12 +32,12 @@ var auditEvents = function(hourEl) {
 
     // change color of description cells depending on time of day
     if(moment().isAfter(time)) {
-        $(textArea).addClass("list-group-item-secondary");
+        $("#textArea").addClass("past");
     } 
     else if (Math.abs(moment() === moment)) {
-        $(textArea).addClass("list-group-item-danger");
+        $("#textArea").addClass("present");
     }
     else if (Math.abs(moment().diff(time, "hours")) <= 1) {
-        $(textArea).addClass("list-group-item-success");
+        $("#textArea").addClass("future");
     };
 }
